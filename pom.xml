@@ -60,10 +60,14 @@
 		<plugins>
 		
 		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-resources-plugin</artifactId>
-			<version>3.1.0</version> <!--$NO-MVN-MAN-VER$ -->
-		</plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.11.0</version> <!-- Certifique-se de usar a versão mais recente -->
+            <configuration>
+                <source>23</source>
+                <target>23</target>
+            </configuration>
+        </plugin>
 		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
