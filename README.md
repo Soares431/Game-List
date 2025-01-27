@@ -15,14 +15,8 @@ O projeto foi implementado utilizando as seguintes tecnologias e práticas:
   
 Banco de dados:
  - H2 (usado em ambiente de testes, com armazenamento em memória)
-   - User name: "sa"
-   - Password: (em branco)
      
  - PostgreSQL no pgAdmin 4 em servidor remoto com Docker (utilizado na produção para persistência dos dados)
-   - Credenciais de acesso:
-     - Usuário: me@example.com
-     - Senha: 123456
-   - Senha do Banco de Dados: 1234567
 
 ___
 
