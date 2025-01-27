@@ -11,6 +11,7 @@ O projeto foi implementado utilizando as seguintes tecnologias e práticas:
 
  - Linguagem de programação: Java
  - Framework: Spring Boot (desenvolvido no ambiente Spring Tool Suite - STS)
+ - Postman para testar e validar as requisições web
   
 Banco de dados:
  - H2 (usado em ambiente de testes, com armazenamento em memória)
@@ -22,31 +23,19 @@ ___
 
 ___
 
-O desenvolvimento seguiu uma arquitetura bem definida, com a separação das responsabilidades em camadas:
+O desenvolvimento seguiu uma arquitetura bem definida, com a criação de DTOs(Data Transfer Object) e separação das responsabilidades em camadas:
 
-##### Camada de Controladores REST:
-
-- Responsável por gerenciar as entradas e saídas da aplicação, fornecendo endpoints para o consumo da API. Segue os princípios RESTful.
+- Camada de Controladores REST:
   
-##### Camada de Serviço:
+- Camada de Serviço:
 
-- Contém a lógica de negócio da aplicação, como regras específicas relacionadas ao gerenciamento dos jogos.
-
-#### Camada de Acesso a Dados:
-
-- Realiza operações no banco de dados por meio de repositórios, que abstraem e organizam as consultas e comandos SQL necessários.
-
-#### DTO (Data Transfer Object):
-
-- Criado para transferir dados de maneira segura e eficiente entre as camadas da aplicação, evitando o vazamento direto das entidades do banco de dados.
+- Camada de Acesso a Dados:
 
 ___
 
 ### Entidades do Projeto
 
 ___
-
-No contexto deste projeto, as entidades representam os principais elementos do sistema e seus relacionamentos. Abaixo, segue a explicação de cada uma delas:
 
 #### Game
 
@@ -67,7 +56,8 @@ No contexto deste projeto, as entidades representam os principais elementos do s
 
 - Representa a chave primária composta da entidade Belonging.
 - É composta pelas chaves primárias de Game e GameList, garantindo que cada jogo pertença a uma única lista de forma única.
-- Essa estrutura de entidades reflete a relação "muitos para muitos" entre jogos e listas, com a entidade Belonging funcionando como um intermediário para gerir essa associação de forma eficiente e escalável.
+
+Essa estrutura de entidades reflete a relação "muitos para muitos" entre jogos e listas, com a entidade Belonging funcionando como um intermediário.
 
 ___
 
@@ -77,7 +67,7 @@ ___
 
 O projeto oferece funcionalidades simples e eficientes para gerenciar jogos e listas. Entre as principais funcionalidades, temos:
 
-1. **Exibir todos os jogos ou um jogo específico**: Permite visualizar todos os jogos cadastrados ou buscar por um jogo específico através de seus dados.
+1. **Exibir todos os jogos ou um jogo específico**: Permite visualizar todos os jogos cadastrados ou buscar por um jogo específico através de seus dados como seu ID.
 
 2. **Exibir uma lista e seus jogos**: Permite visualizar os jogos associados a uma lista específica, mostrando a organização e os detalhes dos jogos presentes nela.
 
@@ -87,7 +77,7 @@ O projeto oferece funcionalidades simples e eficientes para gerenciar jogos e li
 
  - Qual lista será utilizada.
  - Qual jogo deve ter a posição alterada.
-- Qual será a nova posição do jogo dentro da lista.
+ - Qual será a nova posição do jogo dentro da lista.
 
 ___
 
@@ -95,7 +85,7 @@ ___
 
 ___
 
-O projeto também utilizou instruções SQL personalizadas para realizar projeções e trazer dados específicos do banco de dados, otimizando a consulta e apresentação das informações. Abaixo estão dois exemplos dessas instruções:
+O projeto também utilizou instruções SQL personalizadas para realizar projeções e trazer dados específicos do banco de dados. Abaixo estão dois exemplos dessas instruções:
 
 #### *Search for List*: 
 Essa funcionalidade retorna os jogos associados a uma lista específica, ordenados por uma posição definida dentro da lista.
